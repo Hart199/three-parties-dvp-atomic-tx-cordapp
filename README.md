@@ -9,7 +9,7 @@ This CorDapp creates Delivery-vs-Payment atomic transaction for on ledger `Asset
 * Clearing House: coordinates `Seller` and `Buyer` parties to process the settlement transaction. It initiate settlement of `Asset` transfer request and collect the required states (i.e. Asset and Cash) from counterparties (i.e. Seller and Buyer) in-order to complete the transaction.
 * Notary: notary node to check double-spend of input states then verify and sign final transaction.
 
-**This CorDapp example business-logic-flow is as below:**
+**This CorDapp example business-logic flows as below:**
 
 * 1. The `Seller` party creates the `Asset` state of type `OwnableState` on ledger.
 * 2. Create `AssetTransfer` state and share it with `Buyer` party who willing to buy the `Asset`. 
