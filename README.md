@@ -1,4 +1,4 @@
-# Three-way flows CorDapp - DvP atomic transaction
+# Three-way flows - DvP atomic transaction - CorDapp
 
 This CorDapp creates Delivery-vs-Payment atomic transaction for on ledger `Asset` transfer for `Cash` with three participants.
 
