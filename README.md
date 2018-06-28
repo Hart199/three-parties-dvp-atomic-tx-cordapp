@@ -1,23 +1,23 @@
 # Three-way flows CorDapp - DvP atomic transaction
 
-This CorDapp creates Delivery-vs-Payment atomic tranasaction for on ledger `Asset` transfer for `Cash` with three participants.
+This CorDapp creates Delivery-vs-Payment atomic transaction for on ledger `Asset` transfer for `Cash` with three participants.
 
 **CorDapp Nodes:**
 
 * 1. Security Seller:  This party is owner of `Asset` state of type `OwnableState` on ledger. He sells these assets for cash by creating Corda transaction.
 * 2. Security Buyer: This party has some `Cash` tokens on his ledger. He purchases `Asset` securities for Cash.
-* 3. Clearing House: cordinates `Seller` and `Buyer` parties to process the settlement tranasaction. It initiate settlement of `Asset` transfer request and collect the requied states (i.e. Asset and Cash) from counterparties (i.e. Seller and Buyer) in-order to complete the transaction.
+* 3. Clearing House: coordinates `Seller` and `Buyer` parties to process the settlement transaction. It initiate settlement of `Asset` transfer request and collect the required states (i.e. Asset and Cash) from counterparties (i.e. Seller and Buyer) in-order to complete the transaction.
 * 4. Notary: notary node to check double-spend of input states then verify and sign final transaction.
 
 ## Interacting with the CorDapp via Corda Shell
 
-Using relevant node's Shell console to intiate the flows.
+Using relevant node's Shell console to initiate the flows.
 
 **This CorDapp example business flow is as below:**
 * 1. The `Seller` party creates the `Asset` state of type `OwnableState` on ledger.
 * 2. Create `AssetTransfer` state and share it with `Buyer` party who willing to buy the `Asset`. 
 * 3. The `Buyer` party review and accept the `AssetTransfer` transaction and further share this state with `ClearingHouse` party.
-* 4. The `ClearingHouse` party - offline review and validate the `Asset` data received along with `AssetTransfer` state. If everything is good, he intiate the `AssetSettlementInitiatorFlow` flow to create the settlement tranasaction with three participants. On completion of settlement transaction `Buyer` party became owner of `Asset` state and issues `Cash` tokens equals to the amount of `Asset.purchaseCost` to `Seller` party on ledger.
+* 4. The `ClearingHouse` party - offline review and validate the `Asset` data received along with `AssetTransfer` state. If everything is good, he initiate the `AssetSettlementInitiatorFlow` flow to create the settlement transaction with three participants. On completion of settlement transaction `Buyer` party became owner of `Asset` state and issues `Cash` tokens equals to the amount of `Asset.purchaseCost` to `Seller` party on ledger.
 
 **Let's start flows from each Corda node's shell console step-by-step:**
 
